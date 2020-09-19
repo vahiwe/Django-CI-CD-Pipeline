@@ -6,7 +6,7 @@ After=network.target
 User=centos
 Group=nginx
 WorkingDirectory=/var/lib/jenkins/workspace/DjangoApp
-ExecStart=/var/lib/jenkins/workspace/DjangoApp/env/bin/gunicorn --workers 3 --log-level debug --error-logfile /var/lib/jenkins/workspace/DjangoApp/error.log --bind unix:/var/lib/jenkins/workspace/DjangoApp/app.sock conf.wsgi:application
+ExecStart=/var/lib/jenkins/workspace/DjangoApp/env/bin/gunicorn --workers 3 --log-level debug --error-logfile /var/lib/jenkins/workspace/DjangoApp/error.log --bind unix:/var/lib/jenkins/workspace/DjangoApp/app.sock DjangoApp.wsgi:application
 
 [Install]
 WantedBy=multi-user.target
